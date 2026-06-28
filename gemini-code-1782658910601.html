@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PandaVerse | Web3 Quest Platform</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #080A12;
+        }
+        .glass-card {
+            background: rgba(13, 17, 30, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card:hover {
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+        .neon-text-purple {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+        .input-field {
+            background: rgba(10, 13, 24, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .input-field:focus {
+            border-color: rgba(168, 85, 247, 0.5);
+            outline: none;
+        }
+        @keyframes pandaEntrance {
+            0% { transform: scale(0.3); opacity: 0; filter: blur(10px); }
+            50% { transform: scale(1.1); filter: blur(0px); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-panda-in {
+            animation: pandaEntrance 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen overflow-x-hidden selection:bg-purple-600 selection:text-white relative">
+
+    <div id="intro-overlay" class="fixed inset-0 z-50 bg-[#080A12] flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="absolute w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+        <div class="text-center space-y-6 z-10">
+            <div class="animate-panda-in text-[140px] md:text-[180px] filter drop-shadow-[0_0_35px_rgba(168,85,247,0.4)] select-none">🐼</div>
+            <h2 class="text-xl font-bold tracking-widest text-purple-300 uppercase animate-pulse">Entering PandaVerse...</h2>
+        </div>
+    </div>
+
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-purple-600/10 to-pink-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-40 bg-[#080A12]/60 backdrop-blur-md border-b border-white/5 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-500 via-pink-500 to-blue-500 p-[2px] flex items-center justify-center">
+                <div class="w-full h-full bg-[#080A12] rounded-[10px] flex items-center justify-center font-bold text-xl">🐼</div>
+            </div>
+            <span class="font-black text-xl tracking-wider uppercase text-white">Panda<span class="text-purple-400">Verse</span></span>
+        </div>
+    </nav>
+
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+        <section class="max-w-4xl mx-auto pt-32 pb-8 px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-widest mb-4">
+                <i data-lucide="flame" class="w-3.5 h-3.5 text-orange-400"></i> Quest Matrix
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3 uppercase">
+                Panda<span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 neon-text-purple">Verse</span> Quests
+            </h1>
+            <p class="text-sm text-slate-400 max-w-xl mx-auto">Complete all the official social tasks below and submit your details to qualify for the exclusive rewards tier.</p>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-6 pb-24 space-y-6">
+            
+            <div class="glass-card rounded-2xl p-6 relative">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-xs font-bold text-slate-300 shrink-0 mt-0.5">1</div>
+                    <div>
+                        <h3 class="text-base font-bold text-white tracking-wide">Follow @PandaVerse_e</h3>
+                        <p class="text-xs text-slate-400 mt-1">Follow our official account on X, then drop your X username.</p>
+                    </div>
+                </div>
+                <div class="pl-12 space-y-3">
+                    <button onclick="window.open('https://x.com/PandaVerse_e', '_blank')" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer">
+                        <i data-lucide="twitter" class="w-3.5 h-3.5"></i> Open & Follow
+                    </button>
+                    <div class="relative max-w-md">
+                        <input type="text" id="input-username" placeholder="@yourusername" class="w-full input-field rounded-xl py-3 px-4 text-sm font-mono text-purple-300 placeholder-slate-600">
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 relative">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-xs font-bold text-slate-300 shrink-0 mt-0.5">2</div>
+                    <div>
+                        <h3 class="text-base font-bold text-white tracking-wide">Like & Retweet the pinned post</h3>
+                        <p class="text-xs text-slate-400 mt-1">Open the launch tweet, give it a like and a retweet.</p>
+                    </div>
+                </div>
+                <div class="pl-12 flex flex-wrap items-center gap-4">
+                    <button onclick="window.open('https://x.com/PandaVerse_e', '_blank')" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Open the tweet
+                    </button>
+                    <label class="flex items-center gap-2 text-xs text-slate-400 cursor-pointer select-none">
+                        <input type="checkbox" id="check-likert" class="w-4 h-4 rounded border-white/10 bg-slate-950 text-purple-600 focus:ring-0">
+                        <span>I liked & retweeted it</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 relative">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-xs font-bold text-slate-300 shrink-0 mt-0.5">3</div>
+                    <div>
+                        <h3 class="text-base font-bold text-white tracking-wide">Comment & drop your comment link</h3>
+                        <p class="text-xs text-slate-400 mt-1">Reply to the tweet, then paste the direct link below.</p>
+                    </div>
+                </div>
+                <div class="pl-12 space-y-3">
+                    <button onclick="window.open('https://x.com/PandaVerse_e', '_blank')" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i> Open & reply
+                    </button>
+                    <div class="relative max-w-md">
+                        <input type="text" id="input-comment" placeholder="https://x.com/..." class="w-full input-field rounded-xl py-3 px-4 text-sm font-mono text-purple-300 placeholder-slate-600">
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 relative">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-xs font-bold text-slate-300 shrink-0 mt-0.5">4</div>
+                    <div>
+                        <h3 class="text-base font-bold text-white tracking-wide">Drop your EVM wallet</h3>
+                        <p class="text-xs text-slate-400 mt-1">Add the Ethereum address for your WL entry.</p>
+                    </div>
+                </div>
+                <div class="pl-12">
+                    <div class="relative max-w-md">
+                        <input type="text" id="input-wallet" placeholder="0x..." class="w-full input-field rounded-xl py-3 px-4 text-sm font-mono text-purple-300 placeholder-slate-600">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <button onclick="submitAllTasks()" id="btn-submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600/80 via-purple-600/80 to-pink-600/80 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-lg cursor-pointer flex items-center justify-center gap-2">
+                    Complete all tasks to submit
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div id="whitelist-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#080A12]/90 backdrop-blur-lg transition-all duration-300">
+        <div class="max-w-md w-full bg-[#0d111e] border border-purple-500/20 rounded-3xl p-8 text-center shadow-2xl flex flex-col items-center space-y-6">
+            <div class="relative w-36 h-36 rounded-full bg-[#1b152d] border border-purple-500/30 flex items-center justify-center">
+                <span class="text-7xl filter drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">🐼</span>
+                <div class="absolute top-2 right-1 bg-purple-500 text-white text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full tracking-wider shadow-md">WL</div>
+            </div>
+            <div class="space-y-3">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">You're <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">whitelisted!</span></h2>
+                <p class="text-sm text-slate-400 leading-relaxed px-4">Your PandaVerse spot is reserved. We've recorded your entry — keep an eye on <span class="text-purple-400 font-semibold">@PandaVerse_e</span> for the mint.</p>
+            </div>
+            <button onclick="closeModal()" class="w-full sm:w-auto px-10 py-3.5 rounded-full bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 hover:from-blue-400 hover:to-pink-400 text-[#080A12] font-extrabold text-sm tracking-wide shadow-md transition-all transform hover:scale-[1.02] cursor-pointer">Back to home</button>
+        </div>
+    </div>
+
+    <footer class="border-t border-white/5 bg-[#05070d] px-6 py-8">
+        <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div>© 2026 PandaVerse Hub. All rights reserved.</div>
+            <div class="flex gap-4">
+                <a href="https://x.com/PandaVerse_e" target="_blank" class="hover:text-white transition-colors">@PandaVerse_e</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Linked directly to your Google Apps Script URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzWY64yhLnDryT8X90Wa3ormVdmzYRAgFAoKx5-6Z1EoOsmnv1iiEZEep2RrJGKg5ulSw/exec';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            setTimeout(() => {
+                const overlay = document.getElementById('intro-overlay');
+                const mainContent = document.getElementById('main-content');
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+                mainContent.classList.remove('opacity-0');
+                mainContent.classList.add('opacity-100');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 700);
+            }, 2000);
+        });
+
+        function submitAllTasks() {
+            const username = document.getElementById('input-username').value.trim();
+            const likeRt = document.getElementById('check-likert').checked;
+            const commentLink = document.getElementById('input-comment').value.trim();
+            const wallet = document.getElementById('input-wallet').value.trim();
+            const btn = document.getElementById('btn-submit');
+
+            if (!username || !likeRt || !commentLink || !wallet) {
+                alert("Please complete all fields and tasks before submitting!");
+                return;
+            }
+
+            btn.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div> Saving To Whitelist...';
+            btn.disabled = true;
+
+            const payload = {
+                username: username,
+                commentLink: commentLink,
+                wallet: wallet
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                btn.innerHTML = 'Complete all tasks to submit';
+                btn.disabled = false;
+                
+                const modal = document.getElementById('whitelist-modal');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Something went wrong. Please try again.');
+                btn.innerHTML = 'Complete all tasks to submit';
+                btn.disabled = false;
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('whitelist-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('input-username').value = '';
+            document.getElementById('check-likert').checked = false;
+            document.getElementById('input-comment').value = '';
+            document.getElementById('input-wallet').value = '';
+        }
+    </script>
+</body>
+</html>
